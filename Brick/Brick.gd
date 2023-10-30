@@ -7,13 +7,13 @@ var dying = false
 func _ready():
 	position = new_position
 	if score >= 100:
-		$ColorRect.color = Color8(224,49,49,255)
+		$ColorRect.color = Color8(95,61,196,255)
 	elif score >= 90:
-		$ColorRect.color = Color8(253,126,20,255)
+		$ColorRect.color = Color8(132,94,247,255)
 	elif score >= 80:
-		$ColorRect.color = Color8(255,212,59,255)
+		$ColorRect.color = Color8(54,79,199,255)
 	elif score >= 70:
-		$ColorRect.color = Color8(148, 216,45,255)
+		$ColorRect.color = Color8(116, 143,252,255)
 	elif score >= 60:
 		$ColorRect.color = Color8(34,139,230,255)
 	elif score >= 50:
