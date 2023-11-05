@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Exercise 3.3—Music and Sound
+=======
+# Project 3 - Juicy Brick Breaker
+>>>>>>> 07356f0ac9e41d6672e67f5f58d972f3132d3062
 
 Exercise for MSCH-C220
 
@@ -23,6 +27,8 @@ Sound effects recorded in [Audacity 3.3.3](https://www.audacityteam.org/)
  * [Open Color open source color scheme](https://yeun.github.io/open-color/)
  * [League Gothic Typeface](https://www.theleagueofmoveabletype.com/league-gothic)
  * [Orbitron Typeface](https://www.theleagueofmoveabletype.com/orbitron)
+ * Seperate Ways by Journey (https://www.youtube.com/watch?v=TJc9MeEoEHY)
+   
  
  ## Future Development
 
