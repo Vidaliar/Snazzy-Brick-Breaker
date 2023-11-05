@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-# Exercise 3.3—Music and Sound
-=======
+
 # Project 3 - Juicy Brick Breaker
->>>>>>> 07356f0ac9e41d6672e67f5f58d972f3132d3062
 
 Exercise for MSCH-C220
 
