@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://wlhd3xyfvblm"]
+[gd_scene load_steps=5 format=3 uid="uid://batxdldth7p7h"]
 
 [ext_resource type="Script" path="res://Paddle/Paddle.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://c7hxvyusuevyk" path="res://Assets/paddleRed.png" id="2_q6g7s"]
-[ext_resource type="Texture2D" uid="uid://73e1k2vwni0p" path="res://Assets/paddleBlu.png" id="3_yg0qx"]
+[ext_resource type="Texture2D" uid="uid://crk6a5kbwiob" path="res://Assets/paddleRed.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cij8ja7rxtr0i" path="res://Assets/paddleBlu.png" id="3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(100, 20)
@@ -14,11 +14,13 @@ script = ExtResource("1")
 position = Vector2(50, 10)
 shape = SubResource("1")
 
-[node name="Paddle" type="Sprite2D" parent="."]
-position = Vector2(50, 10)
-texture = ExtResource("3_yg0qx")
+[node name="Images" type="Node2D" parent="."]
 
-[node name="Highlight" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Images"]
+position = Vector2(50, 10)
+texture = ExtResource("3")
+
+[node name="Highlight" type="Sprite2D" parent="Images"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(50, 10)
-texture = ExtResource("2_q6g7s")
+texture = ExtResource("2")

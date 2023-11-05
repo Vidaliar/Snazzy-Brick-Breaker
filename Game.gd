@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var margin = Vector2(100,90)
-@export var index = Vector2(100,40)
+var margin = Vector2(160,105)
+var index = Vector2(100,40)
 
 func _ready():
 	if Global.level < 0 or Global.level >= len(Levels.levels):

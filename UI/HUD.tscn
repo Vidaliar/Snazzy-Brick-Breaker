@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx3nxb0t4wryk"]
+[gd_scene load_steps=5 format=3 uid="uid://chn44njl6rjpj"]
 
 [ext_resource type="Script" path="res://UI/HUD.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://7f1xspfwyyc1" path="res://Assets/Orbitron Black.otf" id="2_2usgg"]
+[ext_resource type="FontFile" uid="uid://belhapcku6aya" path="res://Assets/Orbitron Black.ttf" id="2"]
+
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="HUD" type="Control"]
 process_mode = 3
@@ -26,8 +50,7 @@ layout_mode = 0
 offset_left = 20.0
 offset_right = 220.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("2_2usgg")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = SubResource("1")
 text = "Score: "
 vertical_alignment = 1
 
@@ -38,8 +61,7 @@ anchor_right = 1.0
 offset_left = -220.0
 offset_right = -20.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("2_2usgg")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = SubResource("2")
 text = "Time: "
 horizontal_alignment = 2
 vertical_alignment = 1

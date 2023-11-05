@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgdgq5dqlotfp"]
+[gd_scene load_steps=5 format=3 uid="uid://bxpjbvi0pivey"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1"]
-[ext_resource type="Theme" uid="uid://qingcp23khdj" path="res://UI/UI.tres" id="1_igco5"]
+[ext_resource type="Theme" uid="uid://2ivhag4ibo68" path="res://UI/UI.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://bqqk016ujx4n7" path="res://Assets/LeagueGothic-Regular.ttf" id="3"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -10,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_igco5")
+theme = ExtResource("2")
 script = ExtResource("1")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -24,6 +42,8 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -300.0
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 60
 text = "Brick Breaker"
 horizontal_alignment = 1
 vertical_alignment = 1
