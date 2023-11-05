@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://kb1u2oh8fx05"]
+[gd_scene load_steps=3 format=3 uid="uid://dfm8d81v2a36w"]
 
 [ext_resource type="Script" path="res://UI/End_Game.gd" id="1"]
-[ext_resource type="Theme" uid="uid://2ivhag4ibo68" path="res://UI/UI.tres" id="2"]
+[ext_resource type="Theme" uid="uid://crrif6721qgok" path="res://UI/UI.tres" id="2"]
 
 [node name="End_Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2")
 script = ExtResource("1")
 

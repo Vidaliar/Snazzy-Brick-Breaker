@@ -1,6 +1,6 @@
 extends Node2D
 
-var margin = Vector2(160,105)
+var margin = Vector2(160,85)
 var index = Vector2(100,40)
 
 func _ready():

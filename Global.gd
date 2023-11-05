@@ -7,15 +7,25 @@ var lives = 0
 var time = 0
 var starting_in = 0
 
-@export var default_starting_in = 4
-@export var default_lives = 5
+var color_rotate = 0
+var color_rotate_amount = 10
+var color_rotate_index = 0.01
+var color_position = Vector2.ZERO
 
+var sway_index = 0
+var sway_period = 0.1
+
+var default_starting_in = 4
+var default_lives = 5
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = PROCESS_MODE_ALWAYS
 	randomize()
 	VP = get_viewport().size
-	var _signal = get_tree().get_root().connect("size_changed", Callable(self, "_resize"))
+	get_tree().get_root().size_changed.connect(_resize)
 	reset()
+
+func _physics_process(_delta):
+	pass
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):
@@ -65,10 +75,10 @@ func update_time(t):
 
 func next_level():
 	level += 1
-	var _scene = get_tree().change_scene_to_file("res://Game.tscn")
+	var _scene = get_tree().change_scene("res://Game.tscn")
 
 func end_game(success):
 	if success:
-		var _scene = get_tree().change_scene_to_file("res://UI/End_Game.tscn")
+		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	else:
-		var _scene = get_tree().change_scene_to_file("res://UI/End_Game.tscn")
+		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
