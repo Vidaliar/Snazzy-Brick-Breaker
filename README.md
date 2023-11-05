@@ -1,4 +1,4 @@
-# Exercise 3.2-Tweening and Screen Shake
+# Project 3 - Juicy Brick Breaker
 
 Exercise for MSCH-C220
 
