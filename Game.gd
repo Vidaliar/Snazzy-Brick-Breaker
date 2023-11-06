@@ -1,7 +1,7 @@
 extends Node2D
 
-var margin = Vector2(160,85)
-var index = Vector2(100,40)
+@export var margin = Vector2(160,105)
+@export var index = Vector2(100,40)
 
 func _ready():
 	if Global.level < 0 or Global.level >= len(Levels.levels):
@@ -16,11 +16,15 @@ func _ready():
 			var Brick = load("res://Brick/Brick.tscn")
 			for rows in range(len(layout)):
 				for cols in range(len(layout[rows])):
-					var brick = Brick.instantiate()
-					brick.new_position = Vector2(margin.x + index.x*cols, margin.y + index.y*rows)
-					brick.position = Vector2(brick.new_position.x,-100)
-					brick.score = layout[rows][cols]
-					Brick_Container.add_child(brick)
+					if layout[rows][cols] > 0:
+						var brick = Brick.instantiate()
+						brick.new_position = Vector2(margin.x + index.x*cols, margin.y + index.y*rows)
+						brick.position = Vector2(brick.new_position.x,-100)
+						brick.score = layout[rows][cols]
+						Brick_Container.add_child(brick)
 		var Instructions = get_node_or_null("/root/Game/UI/Instructions")
 		if Instructions != null:
 			Instructions.set_instructions(level["name"],level["instructions"])
+
+func _physics_process(_delta):
+	pass
