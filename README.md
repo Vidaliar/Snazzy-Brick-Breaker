@@ -1,7 +1,7 @@
 
 # Project 3 - Juicy Brick Breaker
 
-Exercise for MSCH-C220
+For MSCH-C220
 
 The third installment, adding music, sound effects, and a few more "juicy" features to a simple brick-breaker game.
 
