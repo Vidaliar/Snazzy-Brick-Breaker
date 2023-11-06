@@ -15,14 +15,14 @@ var sway_amplitude = 3.0
 var tween = null
 
 var colors = [
-	Color8(224,49,49)
-	,Color8(255,146,43)
-	,Color8(255,212,59)
-	,Color8(148,216,45)
-	,Color8(34,139,230)
-	,Color8(132,94,247)
-	,Color8(190,75,219)
-	,Color8(134,142,150)
+	Color8(95,61,196,255)
+	,Color8(132,94,247,255)
+	,Color8(54,79,199,255)
+	,Color8(116,143,252,255)
+	,Color8(34,139,230,255)
+	,Color8(132,94,247,255)
+	,Color8(190,75,219,255)
+	,Color8(134,142,150,255)
 ]
 var color_index = 0
 var color_distance = 0
@@ -74,8 +74,6 @@ func die():
 	collision_layer = 0
 	collision_mask = 0
 	Global.update_score(score)
-	if not Global.feverish:
-		Global.update_fever(score/5.0)
 	get_parent().check_level()
 	$Confetti.emitting = true
 	if tween:

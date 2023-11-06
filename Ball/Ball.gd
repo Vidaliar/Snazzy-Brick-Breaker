@@ -13,14 +13,9 @@ var wobble_direction = Vector2.ZERO
 var decay_wobble = 0.15
 
 var distort_effect = 0.0002
-
 var h_rotate = 0.0
 
-var released = true
-
-var initial_velocity = Vector2.ZERO
-
-var tween = null
+var tween
 
 func _ready():
 	contact_monitor = true
@@ -47,23 +42,11 @@ func _on_Ball_body_entered(body):
 		wobble_direction = linear_velocity.orthogonal().normalized()
 		wobble_amplitude = wobble_max
 	
-
-func _input(event):
-	if not released and event.is_action_pressed("release"):
-		apply_central_impulse(initial_velocity)
-		released = true
-
+	
 func _integrate_forces(state):
-	
-	if not released:
-		var paddle = get_node_or_null("/root/Game/Paddle_Container/Paddle")
-		if paddle != null:
-			state.transform.origin = Vector2(paddle.position.x + paddle.width, paddle.position.y - 30)
-	else:
-		wobble()
-		distort()
-		comet()
-	
+	wobble()
+	distort()
+	comet()
 	if position.y > Global.VP.y + 100:
 		die()
 	if accelerate:
@@ -88,16 +71,19 @@ func distort():
 	var direction = Vector2(1 + linear_velocity.length() * distort_effect, 1 - linear_velocity.length() * distort_effect)
 	$Images.rotation = linear_velocity.angle()
 	$Images.scale = direction
-
+	
 func comet():
 	h_rotate = wrapf(h_rotate+0.01, 0, 1)
 	var comet_container = get_node_or_null("/root/Game/Comet_Container")
 	if comet_container != null:
-		var sprite = $Images/Sprite2D.duplicate()
+		var sprite = $Images/Sprite.duplicate()
 		sprite.global_position = global_position
 		sprite.modulate.s = 0.6
 		sprite.modulate.h = h_rotate
 		comet_container.add_child(sprite)
 
 func die():
+	var die_sound = get_node_or_null("/root/Game/Die_Sound")
+	if die_sound != null:
+		die_sound.play()
 	queue_free()
